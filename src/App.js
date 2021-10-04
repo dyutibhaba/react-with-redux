@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 // import { bindActionCreators } from 'redux';
 // import { actionCreators } from './state/index';
 import { depositMoney, withdrawMoney } from './state/action-creators/index';
@@ -8,6 +9,11 @@ function App() {
   // access the data in the store
   // this state is the state from th redux store
   const account = useSelector((state) => state.account);
+
+  useEffect(() => {
+    console.log('useEffect called...');
+  }, []);
+
   const dispatch = useDispatch();
 
   // const { depositMoney, withdrawMoney } = bindActionCreators(actionCreators, dispatch);
